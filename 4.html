@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="lang=" en"">
+    <head>
+        <meta charset="UTF-8">
+        <title>Smart City -  Job Portal</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="PBL Team">
+        <link rel="icon" href="https://imgur.com/rMGN4td">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:b" rel="stylesheet">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+    </body>
+    <body class="bg-primary">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navopenclose" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <p><img src="https://i.imgsafe.org/47f1f46772.png" class="img-responsive img-thumbnail " align="left" width="40" hspace="10" vspace="10"/><a href="#" class="navbar-brand">Smart City</a>
+                    </p>
+                </div>
+                <!-- <Whole Navigation bar is in Collapseable div> -->
+                <div class="collapse navbar-collapse" id="navopenclose">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Job
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Apply</a>
+                                </li>
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 1 Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 1 Item</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">About us
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Menu 2 Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 2 Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 2 Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 2 Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 2 Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Menu 2 Item</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="navbar-right">
+                                <i class="glyphicon glyphicon-log-in"></i>
+                                Apply now</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Help</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- End of Navigation and begining of Jumbotron -->
+
+        <div class="container" id="marginbetweennavigationbarandjumbotron">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <h2 class="text-center text-primary" style="margin:0px;padding:0px;font-family: 'Droid Sans', sans-serif;">🔎Search Internship, in you're city.</h2><hr>
+
+
+                    <form class="form-group form-inline text-center">
+
+                        <input type="text" class="form-control " placeholder="Enter Job Title,Desigination,Keywords" style="width:300px;margin:10px;">
+
+
+                        <select class="" style="width:300px;margin:10px;">
+                            <option>Select Experience</option>
+                            <option>0 Year | Fresher</option>
+                            <option value="about-us.html">1 Year</option>
+                            <option>2 Years</option>
+                            <option>3 Years</option>
+                            <option>4 Years</option>
+                            <option>5 Year</option>
+                            <option>6 Years</option>
+                            <option>7 Years</option>
+                            <option>8 Years</option>
+                            <option>9 Years</option>
+                            <option>10 Years</option>
+                            <option>More than 10 Years</option>
+                        </select>
+
+                        <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                            <option value="">Select...</option>
+                            <option value="https://google.com">0 Year | Fresher</option>
+                            <option value="1.html">1 Year
+                            </option>
+                            <option value="https://yahoo.com">2 Year
+                            </option>
+                            <option value="https://yahoo.com">3 Year
+                            </option>
+                            <option value="/4.html">4 Year
+                            </option>
+                            <option value="https://yahoo.com">1 Year
+                            </option>
+                        </select>
+
+                        <p class="text-center">
+                            <button type="submit" class="btn-primary text-center form-control" style="width:300px;">Search</button>
+                        </p>
+                    </form>
+                    <h3 class="text-center text-primary">OR</hr>
+
+                    <div style="height:0px;overflow:hidden;">
+                        <input type="file" id="fileInput" name="fileInput"/>
+                    </div>
+                    <p class="text-center clear-float">
+                        <a href="#" class="btn btn-primary btn-lg" onclick="chooseFile();">📩 Submit Your CV | Resume</a>
+                    </p>
+                    <p class="text-center text-primary">🧙‍♂️ We Will Search Best Matching Internships for You.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Jumbotron -->
+
+
+        <div class="container text-primary">
+            <div class="text-primary" style="background-color:white;border-radius: 6px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 20px;">
+                <div class="row">
+                    <div class="col-xs-12  col-sm-4 text-center">
+                        <ul>
+                            <li>
+                                <h4>Heading placeholder text.</h4>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 text-center">
+                        <ul>
+                            <li>
+                                <h4>Heading placeholder text.</h4>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <iframe src="https://sheetsu.com/a/f/2830b1755081?embedded=true" width="100%" height="600" frameborder="0" style="background: transparent; border: 1px solid #dedede;"></iframe>
+                    <div class="col-xs-12  col-sm-4 text-center">
+
+
+                        <iframe src="https://sheetsu.com/a/t/2830b1755081?embedded=true" width="1000" height="600" frameborder="0" style="background: transparent; border: 1px solid #dedede;"></iframe>
+                        <ul>
+                            <li>
+                                <h4>Heading placeholder text.</h4>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                            <li>
+                                <a href="#">Dummy data</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="text-center">&copy; 2022 PBL Project nearjobs.ml | Guided by @Mansi dave.</p>
+                <div class="text-center">
+                    <b>Created by Team
+                    </div>
+
+                    <form sheetsu="https://sheetsu.com/apis/v1.0/1c3c0ff33">
+                        <input type="text" name="full_name">
+                        <input type="text" name="email">
+                        <textarea name="message"></textarea>
+
+                        <input type="submit">
+                    </form>
+
+                    <script src="//load.sheetsu.com"></script>
+
+                </div>
+                <!--End of Container for footer-->
+            </body>
+        </body>
+    </body>
+</html></div></body><!-- partial --><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script><script src="./script.js"></script></html></body></html>
