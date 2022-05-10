@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Feedback form
+    </title>
+    <style>
+        /* Styling the Body element i.e. Color,
+    Font, Alignment */
+        body {
+            background-color: aliceblue;
+            font-family: Verdana;
+            text-align: center;
+
+
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+            display: block;
+            margin: 0px auto;
+        }
+
+        form img {
+            display: block;
+            width: 25%;
+            height: 25%;
+            margin: auto;
+
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #337ab7;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background: white;
+            height: 80px;
+            width: 100%;
+            z-index: -1;
+
+        }
+
+        label.logo img {
+            /* color: white;
+           font-size: 35px;
+           line-height: 80px;
+           padding: 0 100px;
+                font-weight: bold; */
+            margin-top: -17px;
+
+            padding: 0px;
+            height: 115px;
+            width: 190px;
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+
+        }
+
+        nav ul li a {
+            color: black;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+
+        }
+
+        a.active,
+        a:hover {
+            background: #1b9bff;
+            transition: .5s;
+            text-decoration: none;
+        }
+
+        .checkbtn {
+            font-size: 30px;
+            color: black;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #check {
+            display: none;
+        }
+
+        @media (max-width: 852px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 10px;
+                margin-left: -20px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 852px) {
+            .check {
+                display: block;
+                margin-right: 5px
+            }
+
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #2c3e50;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+            a:hover,
+            a.active {
+                background: none;
+                color: #0082e6;
+            }
+
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="{% url 'home' %}"><img src="{% static "images/123.png" %}" alt="FirstJob"></a></label>
+        <ul>
+         {% comment "" %} <li><a  href="index.html">Home</a></li>{% endcomment %}
+         <li><a href="{% url 'about' %}">About us</a></li>
+         <li><a href="{% url 'feedback' %}">Feedback</a></li>
+         {% if request.user.is_authenticated %}
+         <li><a href="{% url 'logout' %}">Logout</a></li>
+         {% else %}
+         <li><a href="{% url 'signup' %}">Login</a></li>
+         {% endif %}
+      </nav>
+      <section></section>
+      <style>
+         *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: montserrat;
+  
+    }
+    label.logo img{
+        /* color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold; */
+        margin-top: -17px;
+        margin-left: -910px;
+        
+        padding: 0px;
+        height: 115px;
+        width: 190px;
+    }
+    nav{
+      background: linear-gradient(90deg, rgba(109,235,218,0.6001751042213761) 0%, rgba(196,218,221,1) 35%, rgba(0,212,255,1) 100%);;
+      height: 80px;
+      width: 100%;
+    }
+    label.logo{
+      color: black; 
+      font-size: 35px;
+      line-height: 80px;
+      padding: 0 100px;
+      font-weight: bold;
+    }
+    nav ul{
+      float: right;
+      margin-right: 20px;
+    }
+    nav ul li{
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 5px;
+    }
+    nav ul li a{
+      color: black;
+      font-size: 17px;
+      font-weight: bolder;
+      padding: 7px 13px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    a.active,a:hover{
+      background: rgba(109,235,218,0.6001751042213761);
+      transition: .5s;
+    }
+    .checkbtn{
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+    }
+    #check{
+      display: none;
+    }
+    @media (max-width: 952px){
+      label.logo{
+        font-size: 30px;
+        padding-left: -25px;
+        margin-left: -250px;
+      }
+      nav ul li a{
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 780px){
+    
+      .checkbtn{
+        display: block;
+        margin-right: 5px;
+   
+      }
+      ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        
+      }
+      
+
+      nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+      nav ul li a{
+        font-size: 20px;
+      }
+      a:hover,a.active{
+        background: none;
+        color: #0082e6;
+        font-size: larger;
+        font-weight: bolder;
+      }
+      #check:checked ~ ul{
+        left: 0;
+        display: block;
+      }
+    }
+
+    
+      </style>
+
+    <h1 style="margin: 25px;">Help us with feedback to improve our site!</h1>
+
+    <!-- Create Form -->
+    <form action="{% url 'feedback' %}" method='POST'>
+        {% csrf_token %}
+      <!-- Details -->
+      <div class="form-control">
+        <label for="fname">Name</label>
+  <input type="text" id="fname" name="fname">
+    </div>
+
+    <div class="form-control">
+        <label for="email" name="email" id="label-email">
+            Email
+        </label>
+
+        <!-- Input Type Email-->
+        <input type="email" id="email" placeholder="Enter your email" />
+    </div>
+
+
+
+
+    <div class="form-control">
+        <label name="hear"id="label-role">
+            How did you hear about us?
+        </label>
+
+        <!-- Dropdown options -->
+        <select name="hear" id="role">
+            <option value="1st">Google</option>
+            <option value="2nd">Friends</option>
+            <option value="2nd">Advert</option>
+            <option value="2nd">others</option>
+        </select>
+    </div>
+
+    <div class="form-control">
+        <label>
+           Rate Us between 1 to 10
+        </label>
+        <input type="text"  name="rate" placeholder="Rate here" />
+        <!-- Input Type Radio Button -->
+      
+        <!-- <label for="recommed-4">
+            <input type="radio" id="recommed-4" name="recommed">D</input>
+        </label>
+        <label for="recommed-5">
+            <input type="radio" id="recommed-5" name="recommed">E</input>
+        </label>
+        <label for="recommed-6">
+            <input type="radio" id="recommed-6" name="recommed">F</input>
+        </label> -->
+
+    </div>
+
+
+    <div class="form-control">
+        <label for="comment" name="comments">
+            Any comments or suggestions
+        </label>
+
+        <!-- multi-line text input control -->
+        <textarea name="comments" id="comment" placeholder="Enter your comment here">
+        </textarea>
+    </div>
+
+    <!-- Multi-line Text Input Control -->
+    <button type="submit" value="submit">
+        Submit Review
+    </button>
+
+    {% block content %} {% endblock content %}
+           
+        </div>
+    </form>
+   
+      
+</body>
+
+</html>

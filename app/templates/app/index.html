@@ -1,0 +1,450 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en" class="lang=">
+
+<head>
+    <meta charset="UTF-8">
+    <title>First Job -Portal</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="PBL Team">
+    <link rel="icon" href="https://imgur.com/rMGN4td">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:b" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+
+<body class="bg-primary">
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><img src="{% static "images/123.png" %}" alt="FirstJob"></label>
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="{% url 'about' %}">About us</a></li>
+            <li><a href="{% url 'feedback' %}">Feedback</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'signup' %}">Login</a></li>
+            {% endif %}
+
+        </ul>
+      </nav>
+      <section></section>
+      <style>
+        *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    body{
+      font-family: montserrat;
+  
+    }
+    label.logo img{
+        /* color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold; */
+        margin-top: -17px;
+        margin-left: -25px;
+        
+        padding: 0px;
+        height: 115px;
+        width: 190px;
+    }
+    nav{
+      background: linear-gradient(90deg, rgba(109,235,218,0.6001751042213761) 0%, rgba(196,218,221,1) 35%, rgba(0,212,255,1) 100%);;
+      height: 80px;
+      width: 100%;
+    }
+   
+    nav ul{
+      float: right;
+      margin-right: 20px;
+    }
+    nav ul li{
+      display: inline-block;
+      line-height: 80px;
+      margin: 0 5px;
+    }
+    nav ul li a{
+      color: black;
+      font-size: 17px;
+      font-weight: bolder;
+      padding: 7px 13px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    a.active,a:hover{
+      background: rgba(109,235,218,0.6001751042213761);
+      transition: .5s;
+    }
+    .checkbtn{
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none;
+    }
+    #check{
+      display: none;
+    }
+    @media (max-width: 852px){
+      label.logo{
+        font-size: 30px;
+        padding-left: 10px;
+        margin-left: -20px;
+      }
+      nav ul li a{
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 780px){
+    
+      .checkbtn{
+        display: block;
+        margin-right: 5px;
+       
+   
+     
+      }
+      ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        
+      }
+      
+
+      nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        
+      }
+      nav ul li a{
+        font-size: 20px;
+      }
+      a:hover,a.active{
+        background: none;
+        color: #0082e6;
+        font-size: larger;
+        font-weight: bolder;
+      }
+      #check:checked ~ ul{
+        left: 0;
+        display: block;
+      }
+    }
+
+    
+      </style>
+
+    <body>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 6</div>
+                <img src="{% static "images/1.png" %}" style="width:100%">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 6</div>
+                <img src="{% static "images/2.png" %}" style="width:100%">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 6</div>
+                <img src="{% static "images/3.png" %}" style="width:100%">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 6</div>
+                <img src="{% static "images/4.png" %}" style="width:100%">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 6</div>
+                <img src="{% static "images/5.png" %}" style="width:100%">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 6</div>
+                <img src="{% static "images/6.png" %}" style="width:100%">
+
+            </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+        <script>
+            var slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 5000); // Change image every 2 seconds
+            }
+        </script>
+        <!-- End of Navigation and begining of Jumbotron -->
+
+        <div class="container" id="marginbetweennavigationbarandjumbotron">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <h2 class="text-center text-primary"
+                        style="margin:0px;padding:0px;font-family: 'Droid Sans', sans-serif;">🔎Search Internship, in
+                        you're
+                        city.</h2>
+                    <hr>
+
+
+                    <form class="form-group form-inline text-center">
+
+                        <input type="text" class="form-control " placeholder="Enter Job Title,Desigination,Keywords"
+                            style="width:300px;margin:10px;">
+
+
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Select Experience</option>
+                            <option value="1">One year</option>
+                            <option value="2">Two year</option>
+                            <option value="3">Three year</option>
+                        </select>
+                        <p class="text-center">
+                            <button type="submit" class="btn-primary text-center form-control"
+                                style="width:300px; ">Search</button>
+                        </p>
+                    </form>
+                    <h3 class="text-center text-primary">OR</hr>
+                        <form action="{% url 'upload' %}" method='POST' enctype="multipart/form-data">
+                            {% csrf_token %}
+                           
+                                                 
+                            <p class="text-center clear-float">
+                            <div text align=center>
+                                         {% for field in form  %}
+                                         {% render_field field class="form-control"%}
+                                         {% endfor %}
+                                         <br>
+                                        <p style="align-center">Upload Your Resume </p>
+                                     </div>
+                                                 
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                               
+                                         </p>
+                                     </form>
+                                            
+                    
+                        <p class="text-center text-primary">🧙‍♂️ We Will Search Best Matching Internships for You.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Jumbotron -->
+
+
+        <div class="container text-primary">
+            <div class="text-primary"
+                style="background-color:white;border-radius: 6px;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        padding: 20px;">
+                <section class="services-container" id="hasmukh2">
+                    <h1 class="h-primary center">Our Client Companies</h1>
+                    <div class="services1">
+                        <div class="box center">
+                            <img src="{% static "images/C1.png" %}" alt="C1">
+                            <h2 class="h-secondary center">Queen Clinic</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos
+                                tempora autem
+                            </p>
+                        </div>
+                        <div class="box center">
+                            <img src="{% static "images/C2.png" %}" alt="C2">
+                            <h2 class="h-secondary center">Game Consol</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos
+                                tempora autem
+                            </p>
+                        </div>
+                        <div class="box center">
+                            <img src="{% static "images/C3.png" %}" alt="C3">
+                            <h2 class="h-secondary center">Medialens</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos
+                                tempora autem
+                            </p>
+                        </div>
+                        <div class="box center">
+                            <img src="{% static "images/C4.png" %}" alt="C4">
+                            <h2 class="h-secondary center">Koisone</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos
+                                tempora autem
+                            </p>
+                        </div>
+                        <div class="box center">
+                            <img src="{% static "images/C5.png" %}" alt="C5">
+                            <h2 class="h-secondary center">Oriental Tech</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos
+                                tempora autem
+                            </p>
+                        </div>
+                        <div class="box center">
+                            <img src="{% static "images/C6.png" %}" alt="C6">
+                            <h2 class="h-secondary center">Byte Size</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. eos
+                                tempora autem
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="services-container" id="hasmukh2">
+                    <h1 class="h-primary center">Search By Skills</h1>
+                    <div class="services2">
+                        <div class="box2">
+                            <img src="{% static "images/web.png" %}" alt="WD">
+                            <h2 class="h-secondary center">Web Development</h2>
+
+                        </div>
+                        <div class="box2">
+                            <img src="{% static "images/app.png" %}" alt="AD">
+                            <h2 class="h-secondary center">App Development</h2>
+
+                        </div>
+                        <div class="box2">
+                            <img src="{% static "images/c++.png" %}" alt="C++">
+                            <h2 class="h-secondary center">C++</h2>
+
+                        </div>
+                        <div class="box2">
+                            <img src="{% static "images/node.png" %}" alt="nodejs">
+                            <h2 class="h-secondary center">Node JS</h2>
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- <iframe src="https://sheetsu.com/a/f/2830b1755081?embedded=true" width="100%" height="800" frameborder="0" style="background: transparent; border: 1px solid #dedede;"></iframe>
+                    <div class="col-xs-12  col-sm-4 text-center">
+
+
+                        <iframe src="https://sheetsu.com/a/t/2830b1755081?embedded=true" width="1000" height="600" frameborder="0" style="background: transparent; border: 1px solid #dedede;"></iframe> -->
+                <hr>
+                <div class="container2">
+
+                    <div class="contact" style="text-align:center">
+                        <h2>Contact Us</h2>
+                        <p>Swing by for a cup of coffee, or leave us a message:</p>
+                    </div>
+                    <div class="row1">
+
+                        <div class="column1">
+                            <form action="/" method='POST'>
+                                {% csrf_token %}
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="first_name" placeholder="Your name..">
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" name="last_name" placeholder="Your last name..">
+                                <label for="country">Country</label>
+                                <select id="country" name="country">
+                                    <option value="India">India</option>
+                                    <option value="australia">Australia</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="usa">USA</option>
+                                </select>
+                                <label for="subject1">Subject</label>
+                                <textarea id="subject1" name="subject" placeholder="Write something.."
+                                    style="height:170px"></textarea>
+                                <center><input type="submit" value="Submit"></center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <hr>
+        <p class="footer">&copy; 2022 PBL Project nearjobs.ml | Guided by @Mansi dave | Created by Team</p>
+
+
+        <!-- <form class="text-center " sheetsu="https://sheetsu.com/apis/v1.0/1c3c0ff33">
+            <input type="text" name="full_name">
+            <input type="text" name="email">
+            <textarea name="message"></textarea>
+
+            <input type="submit">
+        </form>
+
+        <script src="//load.sheetsu.com"></script> -->
+
+        </div>
+        <!--End of Container for footer-->
+    </body>
+</body>
+</body>
+
+</html>
+</div>
+</body><!-- partial -->
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script src="./script.js"></script>
+
+</html>
+</body>
+
+</html>
